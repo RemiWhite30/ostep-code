@@ -9,7 +9,9 @@ int main(int argc,char *argv[]) {
     fprintf(stderr, "fork failed\n");
     exit(1);
   } else if (rc == 0){
-    printf("Child\n");
+    
+    int child_wait = wait(NULL);
+    printf("Child %d\n", child_wait);
   } else {
     int rc_wait = wait(NULL);
     printf("Parent waited on %d\n", rc_wait);
@@ -19,5 +21,5 @@ int main(int argc,char *argv[]) {
 /*
 Remi White
 wait() returns the PID of the process that it waited on to run. 
-
+If wait() is in the child process it returns -1 because there is no child process of that child to wait on. 
 */
