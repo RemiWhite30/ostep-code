@@ -21,5 +21,6 @@ int main(int argc, char *argv[]) {
 }
 /*
 Remi White
-
+Yes, they both can access the file descriptor returned.
+One of them writes before the other one, but it is undeterministic unless we use wait().
 */
