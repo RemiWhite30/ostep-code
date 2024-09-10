@@ -22,5 +22,5 @@ int main(int argc,char *argv[]) {
 }
 /*
 Remi White
-
+Probably because each one can do certain things based on the type of new program you are going to run or to take in different types of arguments.
 */
