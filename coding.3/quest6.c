@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/wait.h>
+#include <sys/types.h>
 
 int main(int argc,char *argv[]) {
   int rc = fork();
@@ -11,7 +12,7 @@ int main(int argc,char *argv[]) {
   } else if (rc == 0) {
     printf("Child\n");
   } else {
-    waitpid(rc, &argc, 0);
+    waitpid(rc, NULL, 0); 
     printf("Parent\n");
   }
   return 0;
